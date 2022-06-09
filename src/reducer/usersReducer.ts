@@ -2,7 +2,7 @@ import { AnyAction } from "redux";
 import { USER_CREATE_FAIL, USER_CREATE_REQUEST, USER_CREATE_SUCCESS, USER_DELETE_FAIL, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_FETCH_FAIL, USER_FETCH_REQUEST, USER_FETCH_SUCCESS, USER_UPDATE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS } from "../actions/usersAction"
 
 type types = {
-    users: [],
+    users: Array<any>,
     loading: boolean,
     message: string
   };

@@ -6,8 +6,8 @@ import Loader from './common/Loader';
 
 const AllUser = () => {
 
-  const [userName, setUserName] = useState('')
-  const [lName, setLname] = useState('')
+  const [userName, setUserName] = useState<string>('')
+  const [lName, setLname] = useState<string>('')
 
   const usersList = useSelector((state: any) => state.users);
   const { loading, users, message } = usersList;

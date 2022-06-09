@@ -1,23 +1,24 @@
 import axios from "axios"
+import { Dispatch } from "react"
 import { API_URL } from "../config/config"
 
-export const USER_CREATE_REQUEST = 'USER_CREATE_REQUEST'
-export const USER_CREATE_SUCCESS = 'USER_CREATE_SUCCESS'
-export const USER_CREATE_FAIL = 'USER_CREATE_FAIL'
+export const USER_CREATE_REQUEST: string = 'USER_CREATE_REQUEST'
+export const USER_CREATE_SUCCESS: string = 'USER_CREATE_SUCCESS'
+export const USER_CREATE_FAIL: string = 'USER_CREATE_FAIL'
 
-export const USER_FETCH_REQUEST = 'USER_FETCH_REQUEST'
-export const USER_FETCH_SUCCESS = 'USER_FETCH_SUCCESS'
-export const USER_FETCH_FAIL = 'USER_FETCH_FAIL'
+export const USER_FETCH_REQUEST: string = 'USER_FETCH_REQUEST'
+export const USER_FETCH_SUCCESS: string = 'USER_FETCH_SUCCESS'
+export const USER_FETCH_FAIL: string = 'USER_FETCH_FAIL'
 
-export const USER_UPDATE_REQUEST = 'USER_UPDATE_REQUEST'
-export const USER_UPDATE_SUCCESS = 'USER_UPDATE_SUCCESS'
-export const USER_UPDATE_FAIL = 'USER_UPDATE_FAIL'
+export const USER_UPDATE_REQUEST: string = 'USER_UPDATE_REQUEST'
+export const USER_UPDATE_SUCCESS: string = 'USER_UPDATE_SUCCESS'
+export const USER_UPDATE_FAIL: string = 'USER_UPDATE_FAIL'
 
-export const USER_DELETE_REQUEST = 'USER_DELETE_REQUEST'
-export const USER_DELETE_SUCCESS = 'USER_DELETE_SUCCESS'
-export const USER_DELETE_FAIL = 'USER_DELETE_FAIL'
+export const USER_DELETE_REQUEST: string = 'USER_DELETE_REQUEST'
+export const USER_DELETE_SUCCESS: string = 'USER_DELETE_SUCCESS'
+export const USER_DELETE_FAIL: string = 'USER_DELETE_FAIL'
 
-export const createUser = (firstName: any, lastName: any, userName: any, address: any, contactNumber: any) => async (dispatch: any) => {
+export const createUser = (firstName: string, lastName: string, userName: string, address: string, contactNumber: string) => async (dispatch: Dispatch<any>) => {
     try {
         dispatch({
             type: USER_CREATE_REQUEST
@@ -44,7 +45,7 @@ export const createUser = (firstName: any, lastName: any, userName: any, address
         alert(err.response.message || 'Something went wrong with request')
     }
 }
-export const fetchUsers = () => async (dispatch: any) => {
+export const fetchUsers = () => async (dispatch: Dispatch<any>) => {
     try {
         dispatch({
             type: USER_FETCH_REQUEST
@@ -68,7 +69,7 @@ export const fetchUsers = () => async (dispatch: any) => {
         }
     }
 }
-export const updateUser = (userName: any, lName: any) => async (dispatch: any) => {
+export const updateUser = (userName: string, lName: string) => async (dispatch: Dispatch<any>) => {
     try {
         dispatch({
             type: USER_UPDATE_REQUEST
@@ -90,7 +91,7 @@ export const updateUser = (userName: any, lName: any) => async (dispatch: any) =
         alert(err.response.message || 'Something went wrong with request')
     }
 }
-export const deleteUser = (userName: any) => async (dispatch: any) => {
+export const deleteUser = (userName: string) => async (dispatch: Dispatch<any>) => {
     try {
         dispatch({
             type: USER_DELETE_REQUEST

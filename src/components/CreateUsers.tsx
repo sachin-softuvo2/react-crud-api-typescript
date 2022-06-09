@@ -3,18 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../actions/usersAction';
 import Loader from './common/Loader';
+import { errStateType, formStateType } from './State.Type'
 
 
 const CreateUsers = () => {
-
-    const [state, setState] = useState({
+    const [state, setState] = useState<formStateType>({
         firstName: '',
         lastName: '',
         userName: '',
         address: '',
         contactNumber: ''
     })
-    const [showErr, setShowErr] = useState({
+    const [showErr, setShowErr] = useState<errStateType>({
         fNameErr: false,
         lNameErr: false,
         uNameErr: false,
